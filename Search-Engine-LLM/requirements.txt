@@ -18,6 +18,7 @@ duckdb
 pandas
 openai
 langchain-groq
+duckduckgo_search==5.3.1b1
 ddgs
 pymupdf
 arxiv
