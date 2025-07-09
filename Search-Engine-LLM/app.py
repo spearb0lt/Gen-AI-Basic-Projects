@@ -37,7 +37,7 @@ api_key=st.sidebar.text_input("Enter your Groq API Key:",type="password")
 if api_key.strip().lower() == "master":
     # api_key = "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"
     api_key=st.secrets["GROQ_API_KEY"]
-    api_key= secets.GROQ_API_KEY
+    # api_key= secets.GROQ_API_KEY
 
 else:
     api_key = api_key.strip()
