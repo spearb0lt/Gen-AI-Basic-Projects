@@ -34,7 +34,7 @@ api_key=st.sidebar.text_input("Enter your Groq API Key:",type="password")
 
 # Resolve literal “master” alias
 if api_key.strip().lower() == "master":
-    # api_key = "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"
+    # api_key = "gsk_65UqdWppO6niceUD3try3zWcopying3lmvThIs1u40cjHVZeoQLZqG"
     api_key=st.secrets["GROQ_API_KEY"]
     # api_key= secrets.GROQ_API_KEY
 
