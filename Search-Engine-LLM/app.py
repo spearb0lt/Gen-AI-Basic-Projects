@@ -30,17 +30,22 @@ In this example, we're using `StreamlitCallbackHandler` to display the thoughts 
 
 ## Sidebar for settings
 st.sidebar.title("Settings")
+api_key=st.sidebar.text_input("Enter your Groq API Key:",type="password")
 
-# Use st.secrets for deployment
-try:
-    api_key = st.secrets["GROQ_API_KEY"]
-    st.sidebar.success("GROQ API Key loaded from secrets.")
-except KeyError:
-    api_key = st.sidebar.text_input("Enter your Groq API Key:", type="password")
+# Resolve literal “master” alias
+if api_key.strip().lower() == "master":
+    # api_key = "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"
+    # api_key=st.secrets["GROQ_API_KEY"]
+    api_key= secrets.GROQ_API_KEY
+
+else:
+    api_key = api_key.strip()
 
 if not api_key:
-    st.info("Please add your Groq API key to continue.")
+    st.error("Please enter your Groq API key")
     st.stop()
+
+
 
 # Initialize tools
 tools = get_tools()
